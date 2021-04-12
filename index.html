@@ -1,0 +1,22 @@
+<style>
+  .bar {
+    width: 25px;
+    height: 100px;
+    margin: 2px;
+    display: inline-block;
+    background-color: blue;
+  }
+</style>
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select('body') //element selector
+      .selectAll('div') //FUTURE additional element to the previous one
+      .data(dataset) //information to render within additional element /\
+      .enter() //entry point, so far it was empty at all times
+      .append('div') //appending additional element
+      .attr('class', 'bar') //adding HTML to the additional element
+      .style('height', (d) => d * 10 + 'px'); //individually styling each additional element
+  </script>
+</body>
